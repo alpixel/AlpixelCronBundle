@@ -1,12 +1,12 @@
 <?php
-namespace Alpixel\Component\CronBundle\Command;
+namespace Alpixel\Bundle\CronBundle\Command;
 use Doctrine\ORM\EntityManager;
 
 use Symfony\Component\Console\Input\ArgvInput;
 
-use Alpixel\Component\CronBundle\Entity\CronJobResult;
+use Alpixel\Bundle\CronBundle\Entity\CronJobResult;
 
-use Alpixel\Component\CronBundle\Entity\CronJob;
+use Alpixel\Bundle\CronBundle\Entity\CronJob;
 
 use Symfony\Component\Console\Output\OutputInterface;
 

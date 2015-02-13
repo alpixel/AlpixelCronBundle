@@ -1,5 +1,5 @@
 <?php
-namespace Alpixel\Component\CronBundle\Command;
+namespace Alpixel\Bundle\CronBundle\Command;
 use Symfony\Component\Console\Input\InputArgument;
 
 use Symfony\Component\Console\Output\OutputInterface;

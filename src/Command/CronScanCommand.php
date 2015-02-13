@@ -1,12 +1,12 @@
 <?php
-namespace Alpixel\Component\CronBundle\Command;
-use Alpixel\Component\CronBundle\Entity\CronJob;
+namespace Alpixel\Bundle\CronBundle\Command;
+use Alpixel\Bundle\CronBundle\Entity\CronJob;
 
 use Doctrine\ORM\EntityManager;
 
 use Symfony\Component\Console\Command\Command;
 
-use Alpixel\Component\CronBundle\Annotation\CronJob as CronJobAnno;
+use Alpixel\Bundle\CronBundle\Annotation\CronJob as CronJobAnno;
 
 use Symfony\Bundle\DoctrineBundle\Registry;
 

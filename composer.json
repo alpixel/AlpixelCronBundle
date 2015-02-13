@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Alpixel\\Component\\CronBundle\\": "src/"
+            "Alpixel\\Bundle\\CronBundle\\": "src/"
         }
     }
 }

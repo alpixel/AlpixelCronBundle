@@ -1,8 +1,8 @@
 <?php
-namespace Alpixel\Component\CronBundle\Entity\Repository;
+namespace Alpixel\Bundle\CronBundle\Entity\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use Alpixel\Component\CronBundle\Entity\CronJobResult;
+use Alpixel\Bundle\CronBundle\Entity\CronJobResult;
 
 class CronJobResultRepository extends EntityRepository
 {

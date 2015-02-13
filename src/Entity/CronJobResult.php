@@ -1,11 +1,11 @@
 <?php
-namespace Alpixel\Component\CronBundle\Entity;
+namespace Alpixel\Bundle\CronBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(name="cronjob_result")
- * @ORM\Entity(repositoryClass="Alpixel\Component\CronBundle\Entity\Repository\CronJobResultRepository")
+ * @ORM\Entity(repositoryClass="Alpixel\Bundle\CronBundle\Entity\Repository\CronJobResultRepository")
  */
 class CronJobResult
 {
@@ -150,9 +150,9 @@ class CronJobResult
     /**
      * Set job
      *
-     * @param Alpixel\Component\CronBundle\Entity\CronJob $job
+     * @param Alpixel\Bundle\CronBundle\Entity\CronJob $job
      */
-    public function setJob(\Alpixel\Component\CronBundle\Entity\CronJob $job)
+    public function setJob(\Alpixel\Bundle\CronBundle\Entity\CronJob $job)
     {
         $this->job = $job;
     }
@@ -160,7 +160,7 @@ class CronJobResult
     /**
      * Get job
      *
-     * @return Alpixel\Component\CronBundle\Entity\CronJob
+     * @return Alpixel\Bundle\CronBundle\Entity\CronJob
      */
     public function getJob()
     {

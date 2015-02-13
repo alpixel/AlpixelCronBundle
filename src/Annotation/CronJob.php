@@ -1,6 +1,6 @@
 <?php
 
-namespace Alpixel\Component\CronBundle\Annotation;
+namespace Alpixel\Bundle\CronBundle\Annotation;
 
 /**
  * @Annotation()

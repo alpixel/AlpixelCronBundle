@@ -1,11 +1,11 @@
 <?php
-namespace Alpixel\Component\CronBundle\Entity;
+namespace Alpixel\Bundle\CronBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(name="cronjob")
- * @ORM\Entity(repositoryClass="Alpixel\Component\CronBundle\Entity\Repository\CronJobRepository")
+ * @ORM\Entity(repositoryClass="Alpixel\Bundle\CronBundle\Entity\Repository\CronJobRepository")
  */
 class CronJob
 {
@@ -156,9 +156,9 @@ class CronJob
     /**
      * Add results
      *
-     * @param Alpixel\Component\CronBundle\Entity\CronJobResult $results
+     * @param Alpixel\Bundle\CronBundle\Entity\CronJobResult $results
      */
-    public function addCronJobResult(\Alpixel\Component\CronBundle\Entity\CronJobResult $results)
+    public function addCronJobResult(\Alpixel\Bundle\CronBundle\Entity\CronJobResult $results)
     {
         $this->results[] = $results;
     }
@@ -176,9 +176,9 @@ class CronJob
     /**
      * Set mostRecentRun
      *
-     * @param Alpixel\Component\CronBundle\Entity\CronJobResult $mostRecentRun
+     * @param Alpixel\Bundle\CronBundle\Entity\CronJobResult $mostRecentRun
      */
-    public function setMostRecentRun(\Alpixel\Component\CronBundle\Entity\CronJobResult $mostRecentRun)
+    public function setMostRecentRun(\Alpixel\Bundle\CronBundle\Entity\CronJobResult $mostRecentRun)
     {
         $this->mostRecentRun = $mostRecentRun;
     }
@@ -186,7 +186,7 @@ class CronJob
     /**
      * Get mostRecentRun
      *
-     * @return Alpixel\Component\CronBundle\Entity\CronJobResult
+     * @return Alpixel\Bundle\CronBundle\Entity\CronJobResult
      */
     public function getMostRecentRun()
     {

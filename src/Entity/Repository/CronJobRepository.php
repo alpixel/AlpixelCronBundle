@@ -1,5 +1,5 @@
 <?php
-namespace Alpixel\Component\CronBundle\Entity\Repository;
+namespace Alpixel\Bundle\CronBundle\Entity\Repository;
 use Doctrine\ORM\EntityRepository;
 
 class CronJobRepository extends EntityRepository

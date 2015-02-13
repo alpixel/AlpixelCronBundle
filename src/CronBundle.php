@@ -1,6 +1,6 @@
 <?php
 
-namespace Alpixel\Component\CronBundle;
+namespace Alpixel\Bundle\CronBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

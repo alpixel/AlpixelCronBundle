@@ -1,7 +1,7 @@
 <?php
-namespace Alpixel\Component\CronBundle\Command;
+namespace Alpixel\Bundle\CronBundle\Command;
 
-use Alpixel\Component\CronBundle\Entity\CronJobResult;
+use Alpixel\Bundle\CronBundle\Entity\CronJobResult;
 
 use Symfony\Component\Console\Output\OutputInterface;
 

@@ -1,12 +1,12 @@
 <?php
-namespace Alpixel\Component\CronBundle\Command;
+namespace Alpixel\Bundle\CronBundle\Command;
 use Symfony\Component\Console\Input\InputArgument;
 
 use Symfony\Component\Console\Output\OutputInterface;
 
 use Symfony\Component\Console\Input\InputInterface;
 
-use Alpixel\Component\CronBundle\Entity\CronJobResult;
+use Alpixel\Bundle\CronBundle\Entity\CronJobResult;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 
