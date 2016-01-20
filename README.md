@@ -12,19 +12,19 @@ The AlpixelCronBundle is a fork of predakanga/CronBundle which isn't maintained 
 
 ## Installation
 
-1. Install the package
+* Install the package
 
 ```
 composer require 'alpixel/cronbundle:~1.0'
 ```
 
-2. Update DB Schema
+* Update DB Schema
 
 ```
 php app/console doctrine:schema:update
 ```
 
-3. Start using the bundle
+* Start using the bundle
 
 ```
 //analyze all the cron task available and register them
@@ -34,7 +34,7 @@ php app/console cron:scan
 php app/console cron:run
 ```
 
-4. CRON setup
+* CRON setup
 
 In order to run the symfony cron:run task, you should setup a real cronjob on the server just as follows. This example check the cron scrip every 5 minutes.
 
