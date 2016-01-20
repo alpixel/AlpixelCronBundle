@@ -10,7 +10,6 @@ use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Exception\InvalidArgumentException;
 
 class CronRunCommand extends ContainerAwareCommand
 {
@@ -64,7 +63,7 @@ class CronRunCommand extends ContainerAwareCommand
 
         try {
             $commandToRun = $this->getApplication()->get($job->getCommand());
-        } catch (InvalidArgumentException $ex) {
+        } catch (\Symfony\Component\Console\Exception\InvalidArgumentException $ex) {
             $output->writeln(' skipped (command no longer exists)');
             $this->recordJobResult($em, $job, 0, 'Command no longer exists', CronJobResult::SKIPPED);
 
