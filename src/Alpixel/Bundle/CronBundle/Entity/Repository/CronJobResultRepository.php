@@ -1,8 +1,9 @@
 <?php
+
 namespace Alpixel\Bundle\CronBundle\Entity\Repository;
 
-use Doctrine\ORM\EntityRepository;
 use Alpixel\Bundle\CronBundle\Entity\CronJobResult;
+use Doctrine\ORM\EntityRepository;
 
 class CronJobResultRepository extends EntityRepository
 {
@@ -10,8 +11,7 @@ class CronJobResultRepository extends EntityRepository
     {
         $this
             ->getEntityManager()
-            ->createQuery("DELETE CronBundle:CronJobResult result")
-            ->getResult()
-         ;
+            ->createQuery('DELETE CronBundle:CronJobResult result')
+            ->getResult();
     }
 }

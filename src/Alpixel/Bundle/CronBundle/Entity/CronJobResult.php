@@ -1,4 +1,5 @@
 <?php
+
 namespace Alpixel\Bundle\CronBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -19,35 +20,41 @@ class CronJobResult
      * @ORM\Id
      * @ORM\Column(name="cron_result_id", type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @var integer $id
+     *
+     * @var int
      */
     protected $id;
 
     /**
      * @ORM\Column(type="datetime")
-     * @var DateTime $runAt
+     *
+     * @var DateTime
      */
     protected $runAt;
     /**
      * @ORM\Column(type="float")
-     * @var float $runTime
+     *
+     * @var float
      */
     protected $runTime;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
-     * @var integer $result
+     *
+     * @var int
      */
     protected $result;
     /**
      * @ORM\Column(type="text")
-     * @var string $output
+     *
+     * @var string
      */
     protected $output;
 
     /**
      * @ORM\ManyToOne(targetEntity="CronJob", inversedBy="results")
      * @ORM\JoinColumn(name="cron_id",referencedColumnName="cron_id", nullable=false, onDelete="CASCADE")
+     *
      * @var CronJob
      */
     protected $job;
@@ -58,9 +65,9 @@ class CronJobResult
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -68,7 +75,7 @@ class CronJobResult
     }
 
     /**
-     * Set runAt
+     * Set runAt.
      *
      * @param datetime $runAt
      */
@@ -78,7 +85,7 @@ class CronJobResult
     }
 
     /**
-     * Get runAt
+     * Get runAt.
      *
      * @return datetime
      */
@@ -88,7 +95,7 @@ class CronJobResult
     }
 
     /**
-     * Set runTime
+     * Set runTime.
      *
      * @param float $runTime
      */
@@ -98,7 +105,7 @@ class CronJobResult
     }
 
     /**
-     * Get runTime
+     * Get runTime.
      *
      * @return float
      */
@@ -108,9 +115,9 @@ class CronJobResult
     }
 
     /**
-     * Set result
+     * Set result.
      *
-     * @param integer $result
+     * @param int $result
      */
     public function setResult($result)
     {
@@ -118,9 +125,9 @@ class CronJobResult
     }
 
     /**
-     * Get result
+     * Get result.
      *
-     * @return integer
+     * @return int
      */
     public function getResult()
     {
@@ -128,7 +135,7 @@ class CronJobResult
     }
 
     /**
-     * Set output
+     * Set output.
      *
      * @param string $output
      */
@@ -138,7 +145,7 @@ class CronJobResult
     }
 
     /**
-     * Get output
+     * Get output.
      *
      * @return string
      */
@@ -148,7 +155,7 @@ class CronJobResult
     }
 
     /**
-     * Set job
+     * Set job.
      *
      * @param Alpixel\Bundle\CronBundle\Entity\CronJob $job
      */
@@ -158,7 +165,7 @@ class CronJobResult
     }
 
     /**
-     * Get job
+     * Get job.
      *
      * @return Alpixel\Bundle\CronBundle\Entity\CronJob
      */

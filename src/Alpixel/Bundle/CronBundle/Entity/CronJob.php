@@ -1,4 +1,5 @@
 <?php
+
 namespace Alpixel\Bundle\CronBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -13,39 +14,46 @@ class CronJob
      * @ORM\Id
      * @ORM\Column(name="cron_id", type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @var integer $id
+     *
+     * @var int
      */
     protected $id;
 
     /**
      * @ORM\Column
-     * @var string $command
+     *
+     * @var string
      */
     protected $command;
     /**
      * @ORM\Column
-     * @var string $description
+     *
+     * @var string
      */
     protected $description;
 
     /**
      * @ORM\Column(name="job_interval", type="string", length=40)
-     * @var string $interval
+     *
+     * @var string
      */
     protected $interval;
     /**
      * @ORM\Column(type="datetime")
-     * @var DateTime $nextRun
+     *
+     * @var DateTime
      */
     protected $nextRun;
     /**
      * @ORM\Column(type="boolean")
-     * @var boolean $enabled
+     *
+     * @var bool
      */
     protected $enabled;
 
     /**
      * @ORM\OneToMany(targetEntity="CronJobResult", mappedBy="job")
+     *
      * @var ArrayCollection
      */
     protected $results;
@@ -53,10 +61,10 @@ class CronJob
     /**
      * @ORM\OneToOne(targetEntity="CronJobResult")
      * @ORM\JoinColumn(name="cron_result_id",referencedColumnName="cron_result_id", nullable=true, onDelete="SET NULL")
+     *
      * @var CronJobResult
      */
     protected $mostRecentRun;
-
 
     public function __construct()
     {
@@ -64,9 +72,9 @@ class CronJob
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -74,7 +82,7 @@ class CronJob
     }
 
     /**
-     * Set command
+     * Set command.
      *
      * @param string $command
      */
@@ -84,7 +92,7 @@ class CronJob
     }
 
     /**
-     * Get command
+     * Get command.
      *
      * @return string
      */
@@ -94,7 +102,7 @@ class CronJob
     }
 
     /**
-     * Set description
+     * Set description.
      *
      * @param string $description
      */
@@ -104,7 +112,7 @@ class CronJob
     }
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string
      */
@@ -114,7 +122,7 @@ class CronJob
     }
 
     /**
-     * Set interval
+     * Set interval.
      *
      * @param string $interval
      */
@@ -124,7 +132,7 @@ class CronJob
     }
 
     /**
-     * Get interval
+     * Get interval.
      *
      * @return string
      */
@@ -134,7 +142,7 @@ class CronJob
     }
 
     /**
-     * Set nextRun
+     * Set nextRun.
      *
      * @param datetime $nextRun
      */
@@ -144,7 +152,7 @@ class CronJob
     }
 
     /**
-     * Get nextRun
+     * Get nextRun.
      *
      * @return datetime
      */
@@ -154,7 +162,7 @@ class CronJob
     }
 
     /**
-     * Add results
+     * Add results.
      *
      * @param Alpixel\Bundle\CronBundle\Entity\CronJobResult $results
      */
@@ -164,7 +172,7 @@ class CronJob
     }
 
     /**
-     * Get results
+     * Get results.
      *
      * @return Doctrine\Common\Collections\Collection
      */
@@ -174,7 +182,7 @@ class CronJob
     }
 
     /**
-     * Set mostRecentRun
+     * Set mostRecentRun.
      *
      * @param Alpixel\Bundle\CronBundle\Entity\CronJobResult $mostRecentRun
      */
@@ -184,7 +192,7 @@ class CronJob
     }
 
     /**
-     * Get mostRecentRun
+     * Get mostRecentRun.
      *
      * @return Alpixel\Bundle\CronBundle\Entity\CronJobResult
      */
@@ -194,9 +202,9 @@ class CronJob
     }
 
     /**
-     * Set enabled
+     * Set enabled.
      *
-     * @param boolean $enabled
+     * @param bool $enabled
      */
     public function setEnabled($enabled)
     {
@@ -204,9 +212,9 @@ class CronJob
     }
 
     /**
-     * Get enabled
+     * Get enabled.
      *
-     * @return boolean
+     * @return bool
      */
     public function getEnabled()
     {
