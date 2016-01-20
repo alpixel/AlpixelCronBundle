@@ -2,6 +2,7 @@
 
 namespace Alpixel\Bundle\CronBundle\Entity\Repository;
 
+use Alpixel\Bundle\CronBundle\Entity\CronJob;
 use Alpixel\Bundle\CronBundle\Entity\CronJobResult;
 use Doctrine\ORM\EntityRepository;
 
