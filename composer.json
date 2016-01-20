@@ -1,10 +1,14 @@
 {
     "name": "alpixel/cronbundle",
     "type": "symfony-bundle",
+    "description": "This Bundle provide a set of command to setup CRON and run them",
+    "keywords": ["alpixel", "cron", "symfony2", "symfony", "bundle"],
+    "homepage": "https://www.alpixel.fr",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Benjamin HUBERT",
-            "email": "benjamin@alpixel.fr"
+            "name": "ALPIXEL",
+            "email": "contact@alpixel.fr"
         }
     ],
     "minimum-stability": "dev",
@@ -15,8 +19,8 @@
         "symfony/console": "*"
     },
     "autoload": {
-        "psr-0": {
-            "Alpixel\\Bundle\\CronBundle\\": "src/"
+        "psr-4": {
+            "Alpixel\\Bundle\\CronBundle\\": ""
         }
     }
 }
