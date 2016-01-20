@@ -1,6 +1,7 @@
 CRONBundle
 ===========
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/014b2cfe-5f5d-42c2-b2e6-2c6f59342222/mini.png)](https://insight.sensiolabs.com/projects/014b2cfe-5f5d-42c2-b2e6-2c6f59342222)
 [![Build Status](https://travis-ci.org/alpixel/AlpixelCronBundle.svg?branch=master)](https://travis-ci.org/alpixel/AlpixelCronBundle)
 [![StyleCI](https://styleci.io/repos/50050483/shield)](https://styleci.io/repos/50050483)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alpixel/AlpixelCronBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alpixel/AlpixelCronBundle/?branch=master)
