@@ -30,3 +30,5 @@ matrix:
 
 install: 
   - composer update --prefer-source $COMPOSER_FLAGS
+
+script: phpunit --coverage-text
