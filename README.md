@@ -1,6 +1,7 @@
 CRONBundle
 ===========
 
+[![Build Status](https://travis-ci.org/alpixel/AlpixelCronBundle.svg?branch=master)](https://travis-ci.org/alpixel/AlpixelCronBundle)
 [![StyleCI](https://styleci.io/repos/50050483/shield)](https://styleci.io/repos/50050483)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alpixel/AlpixelCronBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alpixel/AlpixelCronBundle/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/alpixel/cronbundle/v/stable)](https://packagist.org/packages/alpixel/cronbundle)
