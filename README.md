@@ -19,17 +19,6 @@ bash
 $ composer require 'alpixel/cronbundle:~1.0'
 ```
 
-If the package can't be found, please check that the alpixel packages repository has been added to the project :
-
-```
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://packages.alpixel.fr/"
-        }
-    ],
-```
-
 2. Update DB Schema
 
 ```
