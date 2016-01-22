@@ -4,7 +4,6 @@ namespace Alpixel\Bundle\CronBundle\Command;
 
 use Alpixel\Bundle\CronBundle\Annotation\CronJob as CronJobAnno;
 use Alpixel\Bundle\CronBundle\Entity\CronJob;
-use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -78,7 +77,7 @@ class CronScanCommand extends ContainerAwareCommand
 
     protected function newJobFound(OutputInterface $output, Command $command, CronJobAnno $anno, $defaultDisabled = false)
     {
-        $em = $this->getContainer()->get("doctrine.orm.entity_manager");
+        $em = $this->getContainer()->get('doctrine.orm.entity_manager');
         $newJob = new CronJob();
         $newJob->setCommand($command->getName());
         $newJob->setDescription($command->getDescription());
