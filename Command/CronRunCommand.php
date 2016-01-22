@@ -4,7 +4,6 @@ namespace Alpixel\Bundle\CronBundle\Command;
 
 use Alpixel\Bundle\CronBundle\Entity\CronJob;
 use Alpixel\Bundle\CronBundle\Entity\CronJobResult;
-use Doctrine\ORM\EntityManager;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Console\Input\InputArgument;
@@ -59,8 +58,7 @@ class CronRunCommand extends ContainerAwareCommand
 
     protected function runJob(CronJob $job, OutputInterface $output)
     {
-
-        $em = $this->getContainer()->get("doctrine.orm.entity_manager");
+        $em = $this->getContainer()->get('doctrine.orm.entity_manager');
         $output->write('Running '.$job->getCommand().': ');
 
         try {
@@ -116,8 +114,7 @@ class CronRunCommand extends ContainerAwareCommand
 
     protected function recordJobResult(CronJob $job, $timeTaken, $output, $resultCode)
     {
-
-        $em = $this->getContainer()->get("doctrine.orm.entity_manager");
+        $em = $this->getContainer()->get('doctrine.orm.entity_manager');
 
         // Create a new CronJobResult
         $result = new CronJobResult();
