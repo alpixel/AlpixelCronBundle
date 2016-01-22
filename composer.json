@@ -1,10 +1,14 @@
 {
     "name": "alpixel/cronbundle",
+    "description": "Simple Cronjob management for Symfony applications",
     "type": "symfony-bundle",
+    "keywords": ["alpixel", "cron", "cronjob", "symfony2", "symfony", "bundle"],
+    "homepage": "https://www.alpixel.fr",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Benjamin HUBERT",
-            "email": "benjamin@alpixel.fr"
+            "name": "ALPIXEL",
+            "email": "contact@alpixel.fr"
         }
     ],
     "minimum-stability": "dev",
