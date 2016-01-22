@@ -57,7 +57,7 @@ class CronScanCommand extends ContainerAwareCommand
                             $output->writeln("Updated interval for $job to {$anno->value}");
                         }
                     } else {
-                        $this->newJobFound($em, $output, $command, $anno, $defaultDisabled);
+                        $this->newJobFound($output, $command, $anno, $defaultDisabled);
                     }
                 }
             }
@@ -76,8 +76,9 @@ class CronScanCommand extends ContainerAwareCommand
         $output->writeln('Finished scanning for cron jobs');
     }
 
-    protected function newJobFound(EntityManager $em, OutputInterface $output, Command $command, CronJobAnno $anno, $defaultDisabled = false)
+    protected function newJobFound(OutputInterface $output, Command $command, CronJobAnno $anno, $defaultDisabled = false)
     {
+        $em = $this->getContainer()->get("doctrine.orm.entity_manager");
         $newJob = new CronJob();
         $newJob->setCommand($command->getName());
         $newJob->setDescription($command->getDescription());

@@ -46,7 +46,7 @@ class CronRunCommand extends ContainerAwareCommand
         $output->writeln("Running $jobCount jobs:");
 
         foreach ($jobsToRun as $job) {
-            $this->runJob($job, $output, $em);
+            $this->runJob($job, $output);
         }
 
         // Flush our results to the DB
@@ -57,8 +57,10 @@ class CronRunCommand extends ContainerAwareCommand
         $output->writeln("Cron run completed in $duration seconds");
     }
 
-    protected function runJob(CronJob $job, OutputInterface $output, EntityManager $em)
+    protected function runJob(CronJob $job, OutputInterface $output)
     {
+
+        $em = $this->getContainer()->get("doctrine.orm.entity_manager");
         $output->write('Running '.$job->getCommand().': ');
 
         try {
@@ -112,8 +114,11 @@ class CronRunCommand extends ContainerAwareCommand
         $job->setNextRun($newTime);
     }
 
-    protected function recordJobResult(EntityManager $em, CronJob $job, $timeTaken, $output, $resultCode)
+    protected function recordJobResult(CronJob $job, $timeTaken, $output, $resultCode)
     {
+
+        $em = $this->getContainer()->get("doctrine.orm.entity_manager");
+
         // Create a new CronJobResult
         $result = new CronJobResult();
         $result->setJob($job);
