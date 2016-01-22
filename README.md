@@ -20,6 +20,32 @@ The AlpixelCronBundle is a fork of predakanga/CronBundle which isn't maintained 
 composer require 'alpixel/cronbundle:~1.0'
 ```
 
+* Update AppKernel.php
+
+
+```
+
+    <?php
+    // app/AppKernel.php
+
+    // ...
+    class AppKernel extends Kernel
+    {
+        public function registerBundles()
+        {
+            $bundles = array(
+                // ...
+
+                new Alpixel\Bundle\CronBundle\CronBundle(),
+            );
+
+            // ...
+        }
+
+        // ...
+    }
+```
+
 * Update DB Schema
 
 ```
