@@ -1,0 +1,7 @@
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: alpixel_cron
+    database_user: travis
+    database_password: ~
+    secret: NotSoSecret
