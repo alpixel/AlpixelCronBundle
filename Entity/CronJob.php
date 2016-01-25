@@ -25,6 +25,7 @@ class CronJob
      * @var string
      */
     protected $command;
+
     /**
      * @ORM\Column
      *

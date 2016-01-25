@@ -1,24 +1,11 @@
 <?php
 
-namespace {
-    if (!$loader = @include __DIR__.'/../vendor/autoload.php') {
-        echo <<<EOM
-You must set up the project dependencies by running the following commands:
+use Doctrine\Common\Annotations\AnnotationRegistry;
 
-curl -s http://getcomposer.org/installer | php
-php composer.phar install
-
-EOM;
-        exit(1);
-    }
+if (!is_file($loaderFile = __DIR__.'/../vendor/autoload.php') && !is_file($loaderFile = __DIR__.'/../../../../../../vendor/autoload.php')) {
+    throw new \LogicException('Could not find autoload.php in vendor/. Did you run "composer install --dev"?');
 }
 
-namespace Symfony\Component\ExpressionLanguage {
-    if (interface_exists('Symfony\Component\ExpressionLanguage\ExpressionFunctionProviderInterface')) {
-        return;
-    }
+$loader = require $loaderFile;
 
-    interface ExpressionFunctionProviderInterface
-    {
-    };
-}
+AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
