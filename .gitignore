@@ -4,3 +4,5 @@ composer.lock
 logs/
 cache/
 /Fixtures/app/parameters.yml
+VagrantFile
+.vagrant
