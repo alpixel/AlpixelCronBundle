@@ -3,11 +3,6 @@
 namespace Alpixel\Bundle\CronBundle\Tests\Command;
 
 use Alpixel\Bundle\CronBundle\Command\CronScanCommand;
-use Alpixel\Bundle\CronBundle\Entity\CronJob;
-use Alpixel\Bundle\CronBundle\Entity\Repository\CronJobRepository;
-use Doctrine\Common\Annotations\Annotation;
-use Doctrine\Common\Annotations\Annotation\Target;
-use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
@@ -27,12 +22,12 @@ class CronScanCommandTest extends KernelTestCase
     {
         $commandTester = $this->createCommandTester($this->container);
 
-        $exitCode = $commandTester->execute(array(
+        $exitCode = $commandTester->execute([
             'command' => 'cron:scan',
-        ), array(
-            'decorated' => false,
+        ], [
+            'decorated'   => false,
             'interactive' => false,
-        ));
+        ]);
 
         $this->assertEquals(0, $exitCode, 'Returns 0 in case of success');
         $this->assertRegExp('/Finished scanning for cron jobs/', $commandTester->getDisplay());
@@ -49,7 +44,7 @@ class CronScanCommandTest extends KernelTestCase
         $command->setContainer($container);
 
         $application->add($command);
+
         return new CommandTester($application->find('cron:scan'));
     }
-
 }
