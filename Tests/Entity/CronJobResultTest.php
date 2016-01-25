@@ -3,7 +3,6 @@
 namespace Alpixel\Bundle\CronBundle\Tests\Entity;
 
 use Alpixel\Bundle\CronBundle\Entity\CronJobResult;
-use Alpixel\Bundle\CronBundle\Tests\TestCronJob;
 
 class CronJobResultTest extends \PHPUnit_Framework_TestCase
 {
@@ -58,5 +57,4 @@ class CronJobResultTest extends \PHPUnit_Framework_TestCase
     {
         return $this->getMockForAbstractClass('Alpixel\Bundle\CronBundle\Entity\CronJobResult');
     }
-
 }

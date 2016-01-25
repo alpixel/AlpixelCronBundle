@@ -9,4 +9,4 @@ if (!is_file($loaderFile = __DIR__.'/../vendor/autoload.php')) {
 
 $loader = require $loaderFile;
 
-AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
+AnnotationRegistry::registerLoader([$loader, 'loadClass']);

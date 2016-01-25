@@ -8,11 +8,11 @@ class AppKernel extends Kernel
 {
     public function registerBundles()
     {
-        $bundles = array(
+        $bundles = [
             new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new \Alpixel\Bundle\CronBundle\CronBundle(),
-        );
+        ];
 
         return $bundles;
     }

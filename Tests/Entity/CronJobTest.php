@@ -2,11 +2,8 @@
 
 namespace Alpixel\Bundle\CronBundle\Tests\Entity;
 
-use Alpixel\Bundle\CronBundle\Tests\TestCronJob;
-
 class CronJobTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testCommand()
     {
         $cronjob = $this->getCronJob();
