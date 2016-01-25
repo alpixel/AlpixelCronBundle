@@ -2,5 +2,5 @@
 composer.phar
 composer.lock
 /logs/
-/cache/
+/app/cache/
 /Fixtures/app/parameters.yml
