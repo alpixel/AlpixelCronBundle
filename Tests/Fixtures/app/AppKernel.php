@@ -1,6 +1,5 @@
 <?php
 
-namespace Alpixel\Bundle\CronBundle\Tests\Fixtures\app;
 
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
