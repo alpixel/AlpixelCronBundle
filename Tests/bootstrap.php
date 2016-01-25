@@ -1,5 +1,6 @@
 <?php
 
+$_SERVER['env'] = 'test';
 use Doctrine\Common\Annotations\AnnotationRegistry;
 
 if (!is_file($loaderFile = __DIR__.'/../vendor/autoload.php') && !is_file($loaderFile = __DIR__.'/../../../../../../vendor/autoload.php')) {

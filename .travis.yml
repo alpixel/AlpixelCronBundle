@@ -27,7 +27,10 @@ matrix:
 before_install:
   - composer selfupdate
 
-install: 
+install:
+  - cp Fixtures/app/parameters.yml.travis Fixtures/app/parameters.yml
   - composer update --prefer-dist --no-interaction $COMPOSER_FLAGS
+  - php Fixtures/app/console doctrine:database:create --env=test
+  - php Fixtures/app/console doctrine:schema:create --env=test
 
 script: phpunit --coverage-text

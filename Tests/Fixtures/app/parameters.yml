@@ -1,0 +1,7 @@
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: calaisportCom_www
+    database_user: root
+    database_password: root
+    secret: NotSoSecret
