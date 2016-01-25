@@ -1,10 +1,10 @@
 #!/usr/bin/env php
 <?php
 
+use Alpixel\Bundle\CronBundle\Tests\Fixtures\app\AppKernel;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Debug\Debug;
-use Symfony\Bundle\FrameworkBundle\Tests\Functional\app\AppKernel;
 
 
 // if you don't want to setup permissions the proper way, just uncomment the following PHP line
