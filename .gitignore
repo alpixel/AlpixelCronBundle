@@ -3,6 +3,6 @@ composer.phar
 composer.lock
 logs/
 cache/
-/Fixtures/app/parameters.yml
+Tests/Fixtures/app/parameters.yml
 VagrantFile
 .vagrant
