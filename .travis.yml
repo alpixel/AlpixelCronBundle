@@ -23,7 +23,11 @@ matrix:
     - php: 5.6
       env: SYMFONY_VERSION=3.0.*@dev
 
+
+before_install:
+  - composer selfupdate
+
 install: 
-  - composer update --prefer-source $COMPOSER_FLAGS
+  - composer update --prefer-dist --no-interaction $COMPOSER_FLAGS
 
 script: phpunit --coverage-text
