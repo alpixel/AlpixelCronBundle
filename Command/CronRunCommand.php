@@ -104,7 +104,7 @@ class CronRunCommand extends ContainerAwareCommand
         $output->writeln("$statusStr in $durationStr seconds");
 
         // Record the result
-        $this->recordJobResult($em, $job, $jobEnd - $jobStart, $jobOutput->getOutput(), $returnCode);
+        $this->recordJobResult($job, $jobEnd - $jobStart, $jobOutput->getOutput(), $returnCode);
 
         // And update the job with it's next scheduled time
         $newTime = new \DateTime();

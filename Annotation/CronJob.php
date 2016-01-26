@@ -2,7 +2,7 @@
 
 namespace Alpixel\Bundle\CronBundle\Annotation;
 
-/*
+/**
  * @Annotation()
  * @Target("CLASS")
  */
