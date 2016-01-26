@@ -22,7 +22,7 @@ class CronRunCommandTest extends KernelTestCase
 
     public function testScanExecute()
     {
-        $commandTester = $this->createScanCommandTester($this->container, [new CronTestCommand]);
+        $commandTester = $this->createScanCommandTester($this->container, [new CronTestCommand()]);
 
         $exitCode = $commandTester->execute([
             'command' => 'cron:scan',
@@ -42,7 +42,7 @@ class CronRunCommandTest extends KernelTestCase
 
     public function testRunExecute()
     {
-        $commandTester = $this->createRunCommandTester($this->container, [new CronTestCommand]);
+        $commandTester = $this->createRunCommandTester($this->container, [new CronTestCommand()]);
 
         $exitCode = $commandTester->execute([
             'command' => 'cron:run',
