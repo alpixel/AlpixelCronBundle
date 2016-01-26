@@ -33,7 +33,7 @@ class CronScanCommandTest extends KernelTestCase
         $this->assertEquals(0, $exitCode, 'Returns 0 in case of success');
         $this->assertRegExp('/Finished scanning for cron jobs/', $commandTester->getDisplay());
 
-        $commandTester = $this->createCommandTester($this->container, [new CronTestCommand]);
+        $commandTester = $this->createCommandTester($this->container, [new CronTestCommand()]);
 
         $exitCode = $commandTester->execute([
             'command' => 'cron:scan',
