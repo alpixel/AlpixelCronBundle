@@ -8,7 +8,8 @@ namespace Alpixel\Bundle\CronBundle\Annotation;
  */
 use Doctrine\Common\Annotations\Annotation;
 
-class CronJob extends Annotation
+final class CronJob extends Annotation
 {
     public $value;
+    public $startTime;
 }

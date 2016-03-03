@@ -22,8 +22,8 @@ class CronRunCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $start = microtime(true);
-        $em = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $jobRepo = $em->getRepository('CronBundle:CronJob');
+        $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $jobRepo = $entityManager->getRepository('CronBundle:CronJob');
 
         $jobsToRun = [];
         if ($jobName = $input->getArgument('job')) {
@@ -48,8 +48,7 @@ class CronRunCommand extends ContainerAwareCommand
             $this->runJob($job, $output);
         }
 
-        // Flush our results to the DB
-        $em->flush();
+        $entityManager->flush();
 
         $end = microtime(true);
         $duration = sprintf('%0.2f', $end - $start);
@@ -58,14 +57,14 @@ class CronRunCommand extends ContainerAwareCommand
 
     protected function runJob(CronJob $job, OutputInterface $output)
     {
-        $em = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
         $output->write('Running '.$job->getCommand().': ');
 
         try {
             $commandToRun = $this->getApplication()->get($job->getCommand());
         } catch (\Symfony\Component\Console\Exception\InvalidArgumentException $ex) {
             $output->writeln(' skipped (command no longer exists)');
-            $this->recordJobResult($em, $job, 0, 'Command no longer exists', CronJobResult::SKIPPED);
+            $this->recordJobResult($entityManager, $job, 0, 'Command no longer exists', CronJobResult::SKIPPED);
 
             // No need to reschedule non-existant commands
             return;
@@ -107,14 +106,15 @@ class CronRunCommand extends ContainerAwareCommand
         $this->recordJobResult($job, $jobEnd - $jobStart, $jobOutput->getOutput(), $returnCode);
 
         // And update the job with it's next scheduled time
-        $newTime = new \DateTime();
-        $newTime = $newTime->add(new \DateInterval($job->getInterval()));
+        $interval = new \DateInterval($job->getInterval());
+        $newTime = clone $job->getNextRun();
+        $newTime->add($interval);
         $job->setNextRun($newTime);
     }
 
     protected function recordJobResult(CronJob $job, $timeTaken, $output, $resultCode)
     {
-        $em = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
 
         // Create a new CronJobResult
         $result = new CronJobResult();
@@ -125,6 +125,6 @@ class CronRunCommand extends ContainerAwareCommand
 
         // Then update associations and persist it
         $job->setMostRecentRun($result);
-        $em->persist($result);
+        $entityManager->persist($result);
     }
 }
