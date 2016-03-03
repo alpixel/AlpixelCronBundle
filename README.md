@@ -76,7 +76,7 @@ Creating your own tasks with CronBundle couldn't be easier - all you have to do 
 
 ```php
 /**
- * @CronJob("PT1H")
+ * @CronJob(value="P1D", startTime="today 12:00")
  */
 class DemoCommand extends Command
 {
