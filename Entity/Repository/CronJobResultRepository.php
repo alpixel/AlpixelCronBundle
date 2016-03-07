@@ -14,4 +14,15 @@ class CronJobResultRepository extends EntityRepository
             ->createQuery('DELETE CronBundle:CronJobResult result')
             ->getResult();
     }
+
+    public function findLastRunForCronJob(CronJob $job)
+    {
+        return $this->createQueryBuilder('cjr')
+                    ->select('MAX(cjr.runAt)')
+                    ->andWhere('cjr.job = :job')
+                    ->andWhere('cjr.result = true')
+                    ->setParameter('job', $job)
+                    ->getQuery()
+                    ->getSingleScalarResult();
+    }
 }
