@@ -3,6 +3,7 @@
 namespace Alpixel\Bundle\CronBundle\Entity\Repository;
 
 use Alpixel\Bundle\CronBundle\Entity\CronJob;
+use Alpixel\Bundle\CronBundle\Entity\CronJobResult;
 use Doctrine\ORM\EntityRepository;
 
 class CronJobResultRepository extends EntityRepository
@@ -20,8 +21,9 @@ class CronJobResultRepository extends EntityRepository
         return $this->createQueryBuilder('cjr')
                     ->select('MAX(cjr.runAt)')
                     ->andWhere('cjr.job = :job')
-                    ->andWhere('cjr.result = true')
+                    ->andWhere('cjr.result = :success')
                     ->setParameter('job', $job)
+                    ->setParameter('success', CronJobResult::SUCCEEDED)
                     ->getQuery()
                     ->getSingleScalarResult();
     }
