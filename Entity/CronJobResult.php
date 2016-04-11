@@ -52,7 +52,7 @@ class CronJobResult
     protected $output;
 
     /**
-     * @ORM\ManyToOne(targetEntity="CronJob", inversedBy="results")
+     * @ORM\ManyToOne(targetEntity="CronJob", inversedBy="results", cascade={"persist"})
      * @ORM\JoinColumn(name="cron_id",referencedColumnName="cron_id", nullable=false, onDelete="CASCADE")
      *
      * @var CronJob

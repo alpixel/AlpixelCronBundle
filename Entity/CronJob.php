@@ -60,7 +60,7 @@ class CronJob
     protected $results;
 
     /**
-     * @ORM\OneToOne(targetEntity="CronJobResult")
+     * @ORM\OneToOne(targetEntity="CronJobResult", cascade={"persist"})
      * @ORM\JoinColumn(name="cron_result_id",referencedColumnName="cron_result_id", nullable=true, onDelete="SET NULL")
      *
      * @var CronJobResult
