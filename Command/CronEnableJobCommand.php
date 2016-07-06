@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Alpixel\Bundle\CronBundle\Entity\CronJob;
 
 class CronEnableJobCommand extends ContainerAwareCommand
 {
@@ -21,7 +22,7 @@ class CronEnableJobCommand extends ContainerAwareCommand
     {
         $jobName = $input->getArgument('job');
         $em = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $jobRepo = $em->getRepository('CronBundle:CronJob');
+        $jobRepo = $em->getRepository(CronJob::class);
 
         $job = $jobRepo->findOneByCommand($jobName);
         if (!$job) {
