@@ -23,7 +23,7 @@ class CronRunCommand extends ContainerAwareCommand
     {
         $start = microtime(true);
         $entityManager = $this->getContainer()->get('doctrine.orm.entity_manager');
-        $jobRepo = $entityManager->getRepository('CronBundle:CronJob');
+        $jobRepo = $entityManager->getRepository(CronJob::class);
 
         $jobsToRun = [];
         if ($jobName = $input->getArgument('job')) {
