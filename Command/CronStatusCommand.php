@@ -33,7 +33,7 @@ class CronStatusCommand extends ContainerAwareCommand
                 return CronJobResult::FAILED;
             }
         } else {
-            $cronJobs = $em->getRepository('CronBundle:CronJob')->findAll();
+            $cronJobs = $em->getRepository(CronJob::class)->findAll();
         }
 
         foreach ($cronJobs as $cronJob) {
