@@ -75,6 +75,8 @@ In order to run the symfony cron:run task, you should setup a real cronjob on th
 Creating your own tasks with CronBundle couldn't be easier - all you have to do is create a normal Symfony2 Command (or ContainerAwareCommand) and tag it with the @CronJob annotation, as demonstrated below:
 
 ```php
+use Alpixel\Bundle\CronBundle\Annotation\CronJob;
+
 /**
  * @CronJob(value="P1D", startTime="today 12:00")
  */
