@@ -46,7 +46,14 @@ composer require 'alpixel/cronbundle:^2.0'
     }
 ```
 
-* Update DB Schema
+* If you use doctrine migrations create new migration
+
+```
+php app/console doctrine:migrations:diff
+php app/console doctrine:migrations:migrate
+```
+
+* or update DB Schema
 
 ```
 php app/console doctrine:schema:update
