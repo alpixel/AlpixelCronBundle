@@ -103,3 +103,5 @@ class DemoCommand extends Command
 ```
 
 The interval spec ("PT1H" in the above example) is documented on the [DateInterval](http://php.net/dateinterval) documentation page, and can be modified. For your CronJob to be scanned and included in future runs, you must first run app/console cron:scan - it will be scheduled to run the next time you run app/console cron:run
+
+You can also configure the startTime to schedule the first run of the cronjob.
