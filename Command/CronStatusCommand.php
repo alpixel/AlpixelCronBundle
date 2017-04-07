@@ -21,6 +21,8 @@ class CronStatusCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $em = $this->getContainer()->get('doctrine.orm.entity_manager');
+        $jobRepo = $em->getRepository(CronJob::class);
+        
         $output->writeln('Cron job statuses:');
 
         $cronJobs = [];
