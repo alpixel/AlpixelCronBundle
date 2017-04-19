@@ -9,6 +9,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Alpixel\Bundle\CronBundle\Entity\CronJobResult;
 
 class CronScanCommand extends ContainerAwareCommand
 {
@@ -27,7 +28,7 @@ class CronScanCommand extends ContainerAwareCommand
         $em = $this->getContainer()->get('doctrine.orm.entity_manager');
 
         // Enumerate the known jobs
-        $jobRepo = $em->getRepository('CronBundle:CronJob');
+        $jobRepo = $em->getRepository(CronJob::class);
         $knownJobs = $jobRepo->getKnownJobs();
         $knownJobs = array_fill_keys($knownJobs, true);
 
